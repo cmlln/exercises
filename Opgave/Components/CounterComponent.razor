@@ -1,8 +1,24 @@
-﻿<h3>CounterComponent</h3>
-<h3>@nameCount</h3>
+﻿<h3>@nameCount</h3>
+<p>Count: @currentCount</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
 @code {
 	[Parameter]
 	public string nameCount { get; set; }
 	[Parameter]
-	public int count {get; set; }
+	public int count { get; set; }
+	[Parameter]
+	public int InitialCount { get; set; }
+
+	private int currentCount;
+
+	protected override void OnInitialized()
+	{
+		currentCount = count;
+	}
+
+	private void IncrementCount()
+	{
+		currentCount += InitialCount;
+	}
 }

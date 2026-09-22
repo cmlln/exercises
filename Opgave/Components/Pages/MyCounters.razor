@@ -1,17 +1,17 @@
-﻿@page "/my-counters"
+@page "/my-counters"
 @rendermode InteractiveServer
 
 
 <h3>My Counters</h3>
+<h2>Counter website</h2>
 
-<CounterComponent nameCount="Counter 1" count="5"/>
-<CounterComponent nameCount="Counter 1" count="10"/>
-
-
-
+<div>
+	<CounterComponent nameCount="Counter 1" count="10" InitialCount="10"/>
+	<CounterComponent nameCount="Counter 2" count="5" InitialCount="1"/>	
+	
+</div>
 
 @code {
-	private int	currentCount = 0;
 
-	
+
 }
