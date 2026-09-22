@@ -1,0 +1,11 @@
+﻿.primary {
+    background-color: deeppink;
+    border-color: hotpink;
+    color: lightpink;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 50px;
+    text-align: right;
+    margin: 20px;
+    border: 10px solid hotpink;
+    border-radius: 15px;
+}
