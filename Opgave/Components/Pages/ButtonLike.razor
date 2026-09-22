@@ -1,0 +1,34 @@
+﻿@page "/buttonlike"
+@rendermode InteractiveServer
+
+<h3>Button Like</h3>
+
+<p>Button like clicked @clickedCount times</p>
+
+<ButtonComponent OnClicked="HandleClick" nameButton="Like" />
+<ButtonComponent OnClicked="HandleClick5" nameButton="Like + 5" />
+<ButtonComponent OnClicked="HandleClick10" nameButton="Like + 10" />
+<ButtonComponent OnClicked="HandleReset" nameButton="Reset" />
+
+
+@code {
+	int clickedCount = 0;
+
+	private async Task HandleClick()
+	{
+		clickedCount++;
+	}
+	private async Task HandleClick5()
+	{
+		clickedCount += 5;
+	}
+	private async Task HandleClick10()
+	{
+		clickedCount += 10;
+	}
+	private async Task HandleReset()
+	{
+		clickedCount = 0;
+	}
+
+}
