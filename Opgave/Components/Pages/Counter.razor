@@ -5,15 +5,12 @@
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@*<p role="status">Current count: @currentCount</p>*@
+
+<CounterComponent nameCount="CounterComponent1" count=0 InitialCount=10/>
+<CounterComponent nameCount="CounterComponent2" count=0 InitialCount=5/>
 
 @code {
-    private int currentCount = 0;
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
 }

@@ -1,0 +1,24 @@
+﻿@page "/likepage"
+@rendermode InteractiveServer
+@inject LikeService LikeService
+
+<h3>LikePage</h3>
+
+<p>Current likes: @LikeService.Service</p>
+
+<button class="btn btn-primary" @onclick="IncrementLikes">Like</button>
+<button class="btn btn-primary" @onclick="RemoveLikes">Remove</button>
+
+@code {
+
+private async Task IncrementLikes()
+	{
+		LikeService.Add(1);
+		
+	}
+private async Task RemoveLikes()
+	{
+		LikeService.Remove(1);
+		
+	}
+}

@@ -1,12 +1,15 @@
 ﻿<h3>@nameCount</h3>
 <p>Count: @currentCount</p>
+
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
 	[Parameter]
 	public string nameCount { get; set; }
+
 	[Parameter]
 	public int count { get; set; }
+
 	[Parameter]
 	public int InitialCount { get; set; }
 

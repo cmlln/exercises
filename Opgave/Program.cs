@@ -1,4 +1,5 @@
 using Opgave.Components;
+using Opgave.Services;
 
 namespace Opgave
 {
@@ -11,6 +12,7 @@ namespace Opgave
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+            builder.Services.AddScoped<LikeService>();
 
             var app = builder.Build();
 
