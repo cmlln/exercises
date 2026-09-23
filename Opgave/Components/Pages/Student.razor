@@ -1,0 +1,60 @@
+﻿@page "/student"
+@rendermode InteractiveServer
+
+<h3>Student</h3>
+<div>
+<p>State your name:</p>
+<input @bind="name"/>
+
+@if (!string.IsNullOrWhiteSpace(name))
+{
+	<p>Hello @name</p>
+}
+</div>
+
+<div>
+<p>State your favourite movie:</p>
+<input @bind="movie"/>
+
+@if (!string.IsNullOrWhiteSpace(movie))
+{
+	<p>Favourite movie: @movie</p>
+}
+</div>
+
+<div>
+<p>State how many pets you have:</p>
+<input @bind="pets"/>
+
+@if (pets > 0)
+{
+	<p>How many pets: @pets</p>
+}
+</div>
+
+<div>
+<p>State if you are a student:</p>
+<input @bind="student"/>
+
+@if (student==true)
+{
+	<p>You are a student</p>
+}
+</div>
+
+<div>
+<p>State your start date:</p>
+<input @bind="startdate"/>
+
+@if (startdate != null)
+{
+	<p>Start date: @startdate</p>
+}
+</div>
+@code {
+	private string name = "";
+	private string movie = "";
+	private int pets = 0;
+	private bool student = true;
+	private DateOnly startdate;
+}
