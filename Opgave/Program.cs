@@ -1,5 +1,6 @@
 using Opgave.Components;
 using Opgave.Services;
+using Opgave.Repository;
 
 namespace Opgave
 {
@@ -13,6 +14,7 @@ namespace Opgave
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
             builder.Services.AddScoped<LikeService>();
+            builder.Services.AddScoped<BookRepo>();
 
             var app = builder.Build();
 

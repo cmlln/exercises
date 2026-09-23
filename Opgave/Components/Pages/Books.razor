@@ -1,6 +1,7 @@
 ﻿@page "/books"
 @rendermode InteractiveServer
 @using Opgave.Models
+@inject BookRepo bookRepo
 
 <h3>Books Page</h3>
 <EditForm Model="bookModel" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
@@ -43,10 +44,44 @@
 
 </EditForm>
 
+@if (books == null || books.Count == 0)
+{
+	<p>No books available.</p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Pages</th>
+				<th>Genre</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var book in books)
+			{
+				<tr>
+					<td>@book.Title</td>
+					<td>@book.Author</td>
+					<td>@book.Pages.ToString()</td>
+					<td>@book.Genre</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
 @code {
 	private BookGenre bookGenre = new BookGenre();
 	private BookModel bookModel = new BookModel();
 	private List<BookModel> books = new List<BookModel>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		books = await bookRepo.GetBooksAsync();
+	}
 
 	private void HandleValidSubmit()
 	{

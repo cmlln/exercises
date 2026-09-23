@@ -7,7 +7,7 @@ namespace Opgave.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
+        public string Author { get; set; } 
         [Required]
         [Range(1, 5000)]
         public int Pages { get; set; }
