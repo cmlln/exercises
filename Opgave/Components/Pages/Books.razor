@@ -8,16 +8,23 @@
 <DataAnnotationsValidator />
 
 <InputText @bind-Value="bookModel.Title" Placeholder="Enter book title" />
+<ValidationMessage For="@(() => bookModel.Title)" />
+
 <InputText @bind-Value="bookModel.Author" Placeholder="Enter book author" />
+<ValidationMessage For="@(() => bookModel.Author)" />
+
 <InputNumber @bind-Value="bookModel.Pages" Placeholder="Enter number of pages" />
+<ValidationMessage For="@(() => bookModel.Pages)" />
 
 <button type="submit">Submit</button>
 
+<ValidationSummary />
 
 @foreach (var book in books)
 {
 	<p>@book.Title by @book.Author with @book.Pages pages</p>
 }
+
 
 </EditForm>
 
