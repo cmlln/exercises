@@ -1,0 +1,57 @@
+﻿@page "/books"
+@rendermode InteractiveServer
+@using Opgave.Models
+
+<h3>Books Page</h3>
+<EditForm Model="bookModel" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+
+<DataAnnotationsValidator />
+
+<InputText @bind-Value="bookModel.Title" Placeholder="Enter book title" />
+<InputText @bind-Value="bookModel.Author" Placeholder="Enter book author" />
+<InputNumber @bind-Value="bookModel.Pages" Placeholder="Enter number of pages" />
+
+<button type="submit">Submit</button>
+
+
+@foreach (var book in books)
+{
+	<p>@book.Title by @book.Author with @book.Pages pages</p>
+}
+
+</EditForm>
+
+<EditForm Model="bookGenre">
+
+	<label for="genre">Select a genre:</label>
+<InputSelect @bind-Value="bookGenre">
+	<option value="">Select a genre</option>
+	
+	@foreach (var genre in Enum.GetValues(typeof(BookGenre)))
+	{
+		<option value="@genre">@genre</option>
+	}
+
+</InputSelect>
+
+</EditForm>
+
+@code {
+	private BookGenre bookGenre = new BookGenre();
+	private BookModel bookModel = new BookModel();
+	private List<BookModel> books = new List<BookModel>();
+
+	private void HandleValidSubmit()
+	{
+		books.Add(new BookModel
+		{
+			Title = bookModel.Title,
+			Author = bookModel.Author,
+			Pages = bookModel.Pages
+		});
+	}
+	private void HandleInvalidSubmit()
+	{
+		// Handle invalid form submission
+	}
+}
