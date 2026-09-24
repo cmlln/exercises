@@ -14,7 +14,9 @@ namespace Opgave.Repository
         new BookModel{ Title = "The Silence of the Lambs", Author = "Thomas Harris", Pages = 352, Genre = BookGenre.Psychological },
         new BookModel{ Title = "The Texas Chain Saw Massacre", Author = "Tobe Hooper", Pages = 90, Genre = BookGenre.Slasher },
         new BookModel{ Title = "The Thing", Author = "John W. Campbell Jr.", Pages = 120, Genre = BookGenre.Monster },
-        new BookModel{ Title = "The Fly", Author = "George Langelaan", Pages = 80, Genre = BookGenre.Bodyhorror }
+        new BookModel{ Title = "The Fly", Author = "George Langelaan", Pages = 80, Genre = BookGenre.Bodyhorror }, 
+        new BookModel { Title = "The Mist", Author = "Stephen King", Pages = 160, Genre = BookGenre.Thriller },
+        new BookModel { Title = "The Babadook", Author = "Jennifer Kent", Pages = 90, Genre = BookGenre.Supernatural }
         };
         public async Task<List<BookModel>> GetBooksAsync()
         {

@@ -3,11 +3,32 @@
 @inject HttpClient Http
 
 <h3>Users</h3>
-
+<div>
 @foreach (var user in users)
 {
 	<p>@user.Name (@user.Email)</p>
 }
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var user in users)
+			{
+				<tr>
+					<td>@user.ID</td>
+					<td>@user.Name</td>
+					<td>@user.Email</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
 
 @code {
 	private List<UserModel> users = new List<UserModel>();
