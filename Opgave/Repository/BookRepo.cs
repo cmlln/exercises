@@ -15,7 +15,7 @@ namespace Opgave.Repository
         new BookModel{ Title = "The Texas Chain Saw Massacre", Author = "Tobe Hooper", Pages = 90, Genre = BookGenre.Slasher },
         new BookModel{ Title = "The Thing", Author = "John W. Campbell Jr.", Pages = 120, Genre = BookGenre.Monster },
         new BookModel{ Title = "The Fly", Author = "George Langelaan", Pages = 80, Genre = BookGenre.Bodyhorror }
-         };
+        };
         public async Task<List<BookModel>> GetBooksAsync()
         {
             await Task.Delay(500);

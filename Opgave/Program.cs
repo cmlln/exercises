@@ -16,6 +16,8 @@ namespace Opgave
             builder.Services.AddScoped<LikeService>();
             builder.Services.AddScoped<BookRepo>();
 
+            builder.Services.AddHttpClient();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
